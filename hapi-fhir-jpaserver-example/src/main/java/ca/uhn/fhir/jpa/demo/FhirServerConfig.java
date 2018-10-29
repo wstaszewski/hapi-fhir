@@ -38,6 +38,7 @@ public class FhirServerConfig extends BaseJavaConfigDstu3 {
 	public DaoConfig daoConfig() {
 		DaoConfig retVal = new DaoConfig();
 		retVal.setAllowMultipleDelete(true);
+		retVal.setIndexMissingFields(DaoConfig.IndexEnabledEnum.ENABLED);
 		return retVal;
 	}
 
