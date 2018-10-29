@@ -39,6 +39,7 @@ public class FhirServerConfig extends BaseJavaConfigDstu3 {
 		DaoConfig retVal = new DaoConfig();
 		retVal.setAllowMultipleDelete(true);
 		retVal.setIndexMissingFields(DaoConfig.IndexEnabledEnum.ENABLED);
+
 		return retVal;
 	}
 
@@ -65,6 +66,7 @@ public class FhirServerConfig extends BaseJavaConfigDstu3 {
 		retVal.setPersistenceUnitName("HAPI_PU");
 		retVal.setDataSource(dataSource());
 		retVal.setJpaProperties(jpaProperties());
+
 		return retVal;
 	}
 

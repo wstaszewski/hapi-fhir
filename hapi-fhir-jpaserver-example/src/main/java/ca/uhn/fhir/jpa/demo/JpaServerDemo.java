@@ -3,11 +3,6 @@ package ca.uhn.fhir.jpa.demo;
 
 import java.util.Collection;
 import java.util.List;
-
-import ca.uhn.fhir.jpa.provider.dstu3.TerminologyUploaderProviderDstu3;
-import ca.uhn.fhir.jpa.subscription.email.SubscriptionEmailInterceptor;
-import ca.uhn.fhir.jpa.subscription.resthook.SubscriptionRestHookInterceptor;
-import ca.uhn.fhir.jpa.subscription.websocket.SubscriptionWebsocketInterceptor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -43,6 +38,10 @@ public class JpaServerDemo extends RestfulServer {
 	@Override
 	protected void initialize() throws ServletException {
 		super.initialize();
+
+
+
+
 
 		/* 
 		 * We want to support FHIR DSTU2 format. This means that the server
@@ -118,6 +117,8 @@ public class JpaServerDemo extends RestfulServer {
 		FhirContext ctx = getFhirContext();
 		ctx.setNarrativeGenerator(new DefaultThymeleafNarrativeGenerator());
 
+
+
 		/*
 		 * Default to JSON and pretty printing
 		 */
@@ -156,15 +157,9 @@ public class JpaServerDemo extends RestfulServer {
 		 * so it is a potential security vulnerability. Consider using an AuthorizationInterceptor
 		 * with this feature.
 		 */
-		if (fhirVersion == FhirVersionEnum.DSTU3) {
-			 registerProvider(myAppCtx.getBean(TerminologyUploaderProviderDstu3.class));
-		}
-
-		// Enable various subscription types
-		registerInterceptor(myAppCtx.getBean(SubscriptionWebsocketInterceptor.class));
-		registerInterceptor(myAppCtx.getBean(SubscriptionRestHookInterceptor.class));
-		registerInterceptor(myAppCtx.getBean(SubscriptionEmailInterceptor.class));
-
+		//if (fhirVersion == FhirVersionEnum.DSTU3) {
+		//	 registerProvider(myAppCtx.getBean(TerminologyUploaderProviderDstu3.class));
+		//}
 	}
 
 }
