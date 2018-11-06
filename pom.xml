@@ -745,7 +745,7 @@
 			<dependency>
 				<groupId>com.sun.xml.bind</groupId>
 				<artifactId>jaxb-core</artifactId>
-				<version>${jaxb_core_version}</version>=
+				<version>${jaxb_core_version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.sun.xml.bind</groupId>
